@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#b4485f</color>
+    <color name="colorPrimaryDark">#802f40</color>
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorBlackSplash">#111111</color>
@@ -9,4 +9,8 @@
     <color name="colorBlueDark">#0691b8</color>
     <color name="colorBlack">#212121</color>
     <color name="colorWhite">#FFFFFF</color>
+
+    <color name="textColor">#000</color>
+    <color name="colorButtonNormal">#009688</color>
+    <color name="ripple_white">#fcfcfc</color>
 </resources>

@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/my_logo_man"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +20,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".QuizActivity" />
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".MenuScreen"></activity>
     </application>
 
 </manifest>
