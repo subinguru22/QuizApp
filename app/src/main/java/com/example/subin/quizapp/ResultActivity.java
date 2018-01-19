@@ -29,8 +29,8 @@ public class ResultActivity extends AppCompatActivity {
         finishButton = (Button) findViewById(R.id.finishButton);
 
         Intent intent = getIntent();
-        String category = intent.getStringExtra("category"); //receive string message from previous intent
-        int score = intent.getIntExtra("score", 0);
+        String category = intent.getStringExtra(MenuScreen.Category); //receive string message from previous intent
+        int score = intent.getIntExtra(MenuScreen.Score, 0);
         scoreTV.setText("Your score: " + score);
 
         //use Shared preferences for storing and retrieving high score
