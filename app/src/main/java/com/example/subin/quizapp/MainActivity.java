@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                                     //Intent start to open the menu screen activity
                                     progressBar.cancel();//Progress bar will be cancelled (hide from screen) when this run function will execute after 3.5seconds
                                     Intent intent=new Intent(getApplicationContext(),MenuScreen.class);
-                                    intent.putExtra(Message, "Computers");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
                                     startActivity(intent);
                                 }
                             }, 2000);

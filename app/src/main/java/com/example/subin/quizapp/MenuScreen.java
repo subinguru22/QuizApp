@@ -14,11 +14,9 @@ import javax.xml.transform.Result;
 
 public class MenuScreen extends AppCompatActivity {
 
-    Toast toast;
-    Button computerButton, generalKnowledgeButton, inventionsButton, scienceButton, sportsButton;
+    Button computerButton, generalKnowledgeButton, inventionsButton, scienceButton, sportsButton, scorecardButton;
 
     public final static String Category = "com.example.subin.quizapp.CATEGORY";
-    public final static String Score = "com.example.subin.quizapp.SCORE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,29 +28,21 @@ public class MenuScreen extends AppCompatActivity {
         inventionsButton = (Button) findViewById(R.id.inventionsButton);
         scienceButton = (Button) findViewById(R.id.scienceButton);
         sportsButton = (Button) findViewById(R.id.sportsButton);
-
-        Intent intent = getIntent();//recieving the intent send by the Navigation activity
-        String message = intent.getStringExtra(MainActivity.Message);//converting that intent message to string using the getStringExtra() method
-        toast = new Toast(this);
-
-        Toast.makeText(getApplicationContext(),
-                message,
-                Toast.LENGTH_LONG).show();
+        scorecardButton = (Button) findViewById(R.id.scorecardButton);
 
         computerButton.setOnClickListener (new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),
-                        "Computer selected",
+                        "Preparing computer category questions",
                         Toast.LENGTH_LONG).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         //Intent start to open the navigation drawer activity
-                        Intent intent=new Intent(getApplicationContext(),ResultActivity.class);
+                        Intent intent=new Intent(getApplicationContext(),QuizActivity.class);
                         intent.putExtra(Category, "Computers");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
-                        intent.putExtra(Score, 11);
                         startActivity(intent);
                     }
                 }, 2000);
@@ -64,15 +54,14 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),
-                        "General Knowledge selected",
+                        "Preparing GK questions",
                         Toast.LENGTH_LONG).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         //Intent start to open the navigation drawer activity
-                        Intent intent=new Intent(getApplicationContext(),ResultActivity.class);
-                        intent.putExtra(Category, "General Knowledge");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
-                        intent.putExtra(Score, 12);
+                        Intent intent=new Intent(getApplicationContext(),QuizActivity.class);
+                        intent.putExtra(Category, "General");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
                         startActivity(intent);
                     }
                 }, 2000);
@@ -84,15 +73,14 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),
-                        "Inventions selected",
+                        "Preparing inventions category questions",
                         Toast.LENGTH_LONG).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         //Intent start to open the navigation drawer activity
-                        Intent intent=new Intent(getApplicationContext(),ResultActivity.class);
+                        Intent intent=new Intent(getApplicationContext(),QuizActivity.class);
                         intent.putExtra(Category, "Inventions");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
-                        intent.putExtra(Score, 13);
                         startActivity(intent);
                     }
                 }, 2000);
@@ -105,15 +93,14 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),
-                        "Science selected",
+                        "Preparing science category questions",
                         Toast.LENGTH_LONG).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         //Intent start to open the navigation drawer activity
-                        Intent intent=new Intent(getApplicationContext(),ResultActivity.class);
+                        Intent intent=new Intent(getApplicationContext(),QuizActivity.class);
                         intent.putExtra(Category, "Science");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
-                        intent.putExtra(Score, 14);
                         startActivity(intent);
                     }
                 }, 2000);
@@ -125,18 +112,35 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),
-                        "Sports selected",
+                        "Preparing sports category questions",
                         Toast.LENGTH_LONG).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         //Intent start to open the navigation drawer activity
-                        Intent intent=new Intent(getApplicationContext(),ResultActivity.class);
-                        intent.putExtra(Category, "Computers");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
-                        intent.putExtra(Score, 15);
+                        Intent intent=new Intent(getApplicationContext(),QuizActivity.class);
+                        intent.putExtra(Category, "Sports");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
                         startActivity(intent);
                     }
                 }, 2000);
+            }
+        });
+
+        scorecardButton.setOnClickListener (new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),
+                        "Fetching your scores",
+                        Toast.LENGTH_LONG).show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //Intent start to open the navigation drawer activity
+                        Intent intent=new Intent(getApplicationContext(),Scorecard.class);
+                        startActivity(intent);
+                    }
+                }, 1500);
             }
         });
     }

@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/my_logo_man"
+        android:icon="@mipmap/launcher_new"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/my_logo_man"
+        android:roundIcon="@mipmap/launcher_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -21,7 +21,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".ResultActivity" />
-        <activity android:name=".MenuScreen"></activity>
+        <activity android:name=".MenuScreen" />
+        <activity android:name=".Scorecard"></activity>
     </application>
 
 </manifest>

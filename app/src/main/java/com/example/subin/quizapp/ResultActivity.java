@@ -28,20 +28,23 @@ public class ResultActivity extends AppCompatActivity {
         highScoreTV = (TextView) findViewById(R.id.highScoreTV);
         finishButton = (Button) findViewById(R.id.finishButton);
 
+        //read the values from previous activity and set the text views
         Intent intent = getIntent();
-        String category = intent.getStringExtra(MenuScreen.Category); //receive string message from previous intent
-        int score = intent.getIntExtra(MenuScreen.Score, 0);
+        String category = intent.getStringExtra(QuizActivity.Category); //receive string message from previous intent
+        categoryTV.setText(category);
+
+        int score = intent.getIntExtra(QuizActivity.Score, 0);
         scoreTV.setText("Your score: " + score);
 
         //use Shared preferences for storing and retrieving high score
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
-        int highScore = sharedPreferences.getInt("highScore",0);
+        int highScore = sharedPreferences.getInt("highScore" + category,0);
         if(highScore > score){
             highScoreTV.setText("High Score: " + highScore);
         } else {
             highScoreTV.setText("New High Score: " + score);
             SharedPreferences.Editor spEditor = sharedPreferences.edit();
-            spEditor.putInt("highScore", score);
+            spEditor.putInt("highScore" + category, score);
             spEditor.commit();
         }
 
@@ -67,7 +70,6 @@ public class ResultActivity extends AppCompatActivity {
                         //Intent start to open the navigation drawer activity
                         progressBar.cancel();//Progress bar will be cancelled (hide from screen) when this run function will execute after 3.5seconds
                         Intent intent=new Intent(getApplicationContext(),MenuScreen.class);
-                        intent.putExtra(Message, "Computers");//by this statement we are sending the name of the button that invoked the new Questions.java activity "Message" is defined by the name of the package + MESSAGE
                         startActivity(intent);
                     }
                 }, 2000);

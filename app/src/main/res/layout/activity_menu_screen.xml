@@ -106,5 +106,27 @@
                 android:textColor="#fff"
                 android:textSize="18sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/scorecardButton"
+                android:layout_width="0dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_height="100dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="#9d78f4"
+                android:drawableLeft="@drawable/scorecard_drwaer"
+                android:paddingLeft="45dp"
+                android:text="View Highscore"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

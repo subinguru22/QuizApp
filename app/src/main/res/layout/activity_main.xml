@@ -43,12 +43,6 @@
             android:textColor="#FF53C39A"
             android:textColorHint="#fff"
             android:textSize="20sp" />
-        <Spinner
-            android:layout_width="0dp"
-            android:id="@+id/spinner"
-            android:layout_height="40dp"
-            android:layout_weight=".34"
-            android:textAlignment="center"/>
 
         <!--Add a spinner to select male or female-->
     </LinearLayout>
@@ -109,9 +103,10 @@
         android:id="@+id/getStartedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/relative"
+        android:layout_marginTop="25dp"
         android:background="@drawable/custom_button"
         android:foreground="?attr/selectableItemBackground"
         android:text="Get   Started"
